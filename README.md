@@ -8,5 +8,5 @@ Js| Coleções|
 Js| Map,Filter e Reduce
 Js| Debugging e Error Handling
 Js| JavaScript Assincrono
-Js| Orientado a Objetos
+Js| Orientado a Objetos.
 
