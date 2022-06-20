@@ -49,7 +49,7 @@
 # Parâmetros
 ## Valor Padrão
 
-**`Objetivo da função: `** Elevador todos os numeros do array, ao numero escolhido pelo parâmetro `num`.<BR>
+**`Objetivo da função:`** Elevador todos os numeros do array, ao numero escolhido pelo parâmetro `num`.<BR>
 **[Num = 1]** - Parâmetro para deixar ele com um valor Padrão 
 ```javascript
 
@@ -70,7 +70,7 @@
 
 ## Objeto "Arguments"
 Parametro para a função pegar quantidades infinitas de valores<br>
-**`Objetivo da função: `** Pegar o maior numero enviado
+**`Objetivo da função:`** Pegar o maior numero enviado
 
 ```javascript
     function acharMaior() {
@@ -87,10 +87,123 @@ Parametro para a função pegar quantidades infinitas de valores<br>
     //CONSOLE.LOG = 90
 ```
 
+# Switch/Case
+**`Objetivo da função:`** Fazer varias verificações
+```javascript
+    function getAnimal(id){
+        switch(id) {
+            case 1:
+                return 'Cão';
+            case 2:
+                return 'Vaca';
+            case 3:
+                return 'Cavalo';
+            default: //Quando digitado um valor não predefinido, utliza-se o valor padrão.
+                return 'Peixe';
+        }
+    }
 
-**Atividade** |**Objetivo**|  **Concluido** | 
-:----------:| :--------: | :--------:
-Atividade de Palindromo |*Verifique, de duas maneiras diferentes entre si, se uma String é um palíndromo.*| Feita!
-Atividade de Array |*Troque todos os elementos pares e diferentes de zero de um array pelo número 0. Se o array for vazio, retorne -1.*| Feita! 
+    getAnimal(1) //Cão
+    getAnimal(8) //Peixe
+```
+# This
+Palavra para referenciar o contexto da função (ou operação)
+```javascript
+    const pessoa = {
+        firstName: 'John',
+        lastName: 'Soares',
+        id: '1',
+        fullName: function(){
+            return this.firstName + ' ' + this.lastName;
+        }
+        getId: function(){
+            return this.id;
+        }
+    };
+
+    pessoa.fullName();
+    // Console.log = [ John Soares ]
+    
+    pessoa.getId();
+    // Console.log = [ 1 ]
+```
+<hr>
+<div align="center">
+
+## Tabela de Contextos com o THIS
+
+<br>
+
+**Contexto** | **Referência** 
+:-------:| :-----: 
+Em um objeto (método) | Próprio objeto dono do método
+Sozinha| Objeto Global (em navegadores, Window)
+Função | Objeto Global
+Evento| Elemento que recebeu o evento
+
+</div>
+
+## Funções com THIS
 
 
+>CALL : Busca dentro de um variavel, valores
+```javascript
+//EXEMPLO 01
+    const pessoa= {
+        nome = 'Miguel';
+    };
+    const animal = {
+        nome = 'Fifi';
+    }
+
+    function getSomething() {
+        console.log(this.nome);
+    }
+    getSomething.call(animal) //Fifi
+    getSomething.call(pessoa) //Miguel
+
+//EXEMPLO 02
+    const numeros = {
+        nu01 = 2
+        nu02 = 3
+    }
+    function soma(a,b){
+        console.log(this.a + this.b)
+    }
+    soma.call(numeros,1,5);
+    // CONSOLE.LOG = [ 6 ]
+```
+>BIND : Clona a estrutura da função onde é aplicado 
+```javascript
+    const retornaNomes = function(){
+        return this.nome;
+    };
+
+    let bruno = retornaNomes.bind({nome: 'Bruno'});
+
+    bruno();
+    // Bruno
+```
+
+# Arrow Functions
+Sempre armazenada em **CONST**
+```javascript
+    //EXEMPLO 01
+    const HelloWorld = function(){
+        return 'Hello World!';
+    }
+    //EXEMPLO 02
+    const HelloWorld = () => {
+        return 'Hello World!';
+    }
+    //ARROW FUNCTION
+    const HelloWorld = () => 'Hello World!';
+
+    console.log(HelloWorld)
+    //Hello World!
+
+
+    //OPERAÇÃO
+    const soma = (a,b) => a + b;
+    soma(2,5) // 7
+```
