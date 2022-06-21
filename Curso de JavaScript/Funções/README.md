@@ -1,5 +1,14 @@
 # Backup de Estudos 
 
+## Topicos
+* [Funções Anônimas e Autoinvocáveil](#Tipos-de-Funções)
+* [Callbacks](##Callbacks) 
+* [Parâmetros](##Parâmetros) 
+* [Switch/Case](##Switch/Case) 
+* [This](##This) 
+* [Arrow Functions](##Arrow-Functions) 
+
+<hr>
 
 ## *Tipos de Funções*
 
