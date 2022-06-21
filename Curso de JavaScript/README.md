@@ -5,7 +5,7 @@ SANTANDER DIO - [Local para Assistir](https://web.dio.me/track/santander-bootcam
 Js| Variáveis | ✔
 Js| Funções |  ✔
 Js| Coleções| ✔
-Js| Map,Filter e Reduce |
+Js| Map,Filter e Reduce | ✔
 Js| Debugging e Error Handling |
 Js| JavaScript Assincrono |
 Js| Orientado a Objetos |
